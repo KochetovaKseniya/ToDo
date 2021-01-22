@@ -1,0 +1,174 @@
+html, body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+
+}
+header {
+    background-image: url('https://hdhouse.ru/data/images/macos_catalina_wallpaper_by_hs1987_dd8hkax-pre.jpg');
+    width: 100%;
+    height: 500px;
+    background-color: rgb(192, 192, 192);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 1em;
+
+}
+li {
+    list-style: none;
+    color: black;
+    box-shadow: 0 14px 28px rgba(133, 133, 133, 0.5), 0 5px 5px rgba(141, 141, 141, 0.5);
+    background-color: #ffffff;
+}
+li i {
+    color:  rgb(82, 134, 177);;
+}
+input[type="text"]:focus {
+    outline: none;
+}
+#calendar2 {
+    color: black;
+}
+.icon, .event {
+    font-size: 2em;
+    padding: 0 1em
+}
+.timer {
+    margin-top: 8em;
+}
+#clock{
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 3em;
+}
+#doc_time {
+	font-size: 1.5em;
+}
+.container {
+    position: relative;
+}
+#main-btn {
+    position: absolute;
+    top: -4.5em;
+    left: 40%;   
+
+    width: 12em;
+    height: 3em;
+
+    background: rgb(75, 122, 161);
+    color: white;
+    border: none;
+    border-radius: 50px;
+}
+@media screen and (max-width: 400px) {
+    #main-btn {
+        position: absolute;
+        top: -4.5em;
+        left: 25%;  
+    }
+    #change {
+        display: none;
+        visibility: hidden;
+    }
+}
+#btn-delete {
+    background:  rgb(82, 134, 177);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    height: 3em;
+    width: 20em;
+}
+#exam {
+    margin-top: 3em;
+}
+.progress {
+    background: rgb(82, 134, 177);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    height: 3.5em;
+
+    width: 9.5em;
+
+    font-size: 1em;
+}
+
+.event:focus, .event:hover,.icon:hover, .icon:focus {
+    color: rgb(116, 162, 201);
+}
+
+.dropbtn {       
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    padding: 1em;;
+    background-color: white;
+
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown:hover .dropdown-content {display: block;}
+
+
+
+#calendar2 {
+    width: 100%;
+    font: monospace;
+    line-height: 1.2em;
+    font-size: 15px;
+    text-align: center;
+}
+#calendar2 thead tr:last-child {
+    font-size: x-small;
+    color:black;
+    opacity: 0.3;
+    font-weight: 700;
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(2) {
+    color:rgb(82, 134, 177);
+    border-radius: 20px; 
+    font-weight: 700;
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+    cursor: pointer;
+}
+#calendar2 tbody td {
+    color: black;
+    font-weight: 300;
+    padding: 0.3em;
+}
+#calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+    color:black;
+    opacity: 0.3;
+    font-weight: 700;
+}
+#calendar2 tbody td.today {
+    background: rgb(82, 134, 177);
+    color: #fff;
+    border-radius: 20px; 
+}
+.bi-arrow-left, .bi-arrow-right {
+    color:rgb(82, 134, 177);
+    font-weight: 700;
+    margin: 0.5em;
+}

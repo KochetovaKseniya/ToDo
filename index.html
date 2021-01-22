@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="d-flex flex-column">
+        <div class="nav d-flex justify-content-between align-items-center">
+            <div class="dropdown">
+                <div class="icon d-block dropbtn"><i class="bi bi-list"></i></div>
+                <div class="dropdown-content px-3 m-2" style="left:1em;">
+                    <table id="calendar2" class="m-1">
+                        <thead>
+                          <tr><td><i class="bi bi-arrow-left"></i><td colspan="5"><td><i class="bi bi-arrow-right"></i>
+                          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+                        <tbody>
+                    </table>
+                </div>
+            </div>
+                         
+            <div class="title"><h2>Today</h2></div>
+            <div class="dropdown">
+                <div class="event dropbtn" id="theme-button"><i class="bi bi-link-45deg"></i></div>
+                <div class="dropdown-content" style="right:1em;">                  
+                  <a href="https://github.com/KochetovaKseniya" id="theme-link"><i class="bi bi-github"></i> Other work</a>
+                </div>
+            </div>           
+        </div>
+
+        <div class="timer d-flex justify-content-center">
+            <div id="clock"></div>
+        </div>
+        <span id="doc_time" class="d-flex justify-content-center"></span>
+
+    </header>
+
+    <main class="container">
+        <div id="exam">
+            <input type="text" v-model="enterText" placeholder="Enter your items" class="form-control p-1" >
+            <button v-on:click="addTask" v-bind:disabled="isDisabled" class="btn btn-light" id="main-btn">add</button>
+
+            <ol class="m-4">
+                <li v-for="task in tasks" v-if="!task.isDeleted" class="d-block bg-light my-3 p-3 rounded"> 
+                    <input type="checkbox" v-model="task.isReady" class="mx-2">
+                    <span v-if="!task.isEditable" v-bind:class="task.isReady ? 'ready' : 'not_ready'">{{task.name}}</span>
+                    <input type="text" v-else v-model="task.name">
+                    <div class="btn-group d-flex float-end" role="group" aria-label="Basic example">
+                        <button v-on:click="task.isEditable = !task.isEditable" class="btn btn-light justify-center" id="change"><i class="bi bi-pencil"></i></button>
+                        <button v-on:click="task.isDeleted = !task.isDeleted" class="btn btn-light justify-center" id="trash"><i class="bi bi-trash"></i></button>
+                    </div>
+                </li>
+            </ol>
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <button v-on:click="dltAllCheckedTasks" class="btn btn-light my-3 px-5" id="btn-delete"><i class="bi bi-trash"></i> Delete All Checked Tasks</button>
+                <div class="progress py-3 px-3">
+                    {{readyTasks}} of {{totalTasks}} tasks done
+                </div>
+             </div>
+        </div>
+        
+    </main>  
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>
+
