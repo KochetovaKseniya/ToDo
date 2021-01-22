@@ -63,9 +63,13 @@ input[type="text"]:focus {
     #main-btn {
         position: absolute;
         top: -4.5em;
-        left: 25%;  
+        left: 22%;  
     }
     #change {
+        display: none;
+        visibility: hidden;
+    }
+    .progress {
         display: none;
         visibility: hidden;
     }
